@@ -15,15 +15,12 @@ video: Chapter 2 - Part 3
  
  
  1) Write down the names of the 6 major primitive types available in C++  here:
- 
- 
- 
- 
- 
- 
- 
- 
- 
+ int
+ float
+ double
+ char
+ bool
+ unsigned int 
  
 2) for each primitive type, write out 3 variable declarations inside the variableDeclaration() function on line 59.
     a) give each variable declaration an initial value
@@ -42,13 +39,14 @@ video: Chapter 2 - Part 3
 
 4) add { ignoreUnused( ); } after each declaration in place of the closing semicolon
 5) pass each of your function parameters to the ignoreUnused function like you did in b)
+did it on step 4
 6) if your function returns something other than void, add 'return { };' at the end of it.
 7) provide default values for an arbitrary number of parameters in the function parameter list.
 
 8) consult the coding style guide found in the Readme.MD and adjust the formatting of your 10 functions.  At this point, you might have something that looks like this:
     float someFunc2(bool yes, int bar=2) { ignoreUnused(yes, bar ); return { }; }
     This does not conform with the coding standard for this course (check the Readme.MD) and needs to be corrected
-    
+
 9) in the main function at the end: 
     for each of those functions declared, 
         a) write out how the function would look if called with correct arguments
@@ -65,9 +63,38 @@ void variableDeclarations()
     //example:
     int number = 2; //declaration of a variable named "number", that uses the primitive type 'int', and the variable's initial value is '2'
     
+    // int
+    int age = 25;
+    int score = 100;
+    int lives = 3;
 
-    
-    ignoreUnused(number); //passing each variable declared to the ignoreUnused() function
+    // float
+    float temperature = 23.5f;
+    float speed = 88.2f;
+    float volume = 0.75f;
+
+    // double
+    double pi = 3.1415926535;
+    double distance = 1520.45;
+    double frequency = 440.0;
+
+    // char
+    char grade = 'A';
+    char initial = 'J';
+    char symbol = '#';
+
+    // bool
+    bool isRunning = true;
+    bool isVisible = false;
+    bool hasFinished = true;
+
+    // unsigned int = values should never be negative
+    unsigned int fileCount = 12;
+    unsigned int playerScore = 5000;
+    unsigned int itemQuantity = 42;
+
+    ignoreUnused(number, age, score, lives, temperature, speed, volume, pi, distance, frequency, grade, initial, symbol, isRunning, isVisible, hasFinished, fileCount, playerScore, itemQuantity); //passing each variable declared to the ignoreUnused() function
+
 }
 
 /*
@@ -84,42 +111,88 @@ bool rentACar(int rentalDuration, int carType = 0)  //function declaration with 
 /*
  1)
  */
+void playSong(int trackNumber = 1, float volumeLevel = 0.5f)
+{
+    ignoreUnused(trackNumber, volumeLevel);
+}
 
 /*
  2)
  */
+int calculateScore(int enemiesDefeated = 0, int bonusPoints = 100)
+{
+    ignoreUnused(enemiesDefeated, bonusPoints);
+    return { };
+}
 
 /*
  3)
  */
+bool connectToServer(char serverRegion = 'A', int timeoutSeconds = 30)
+{
+    ignoreUnused(serverRegion, timeoutSeconds);
+    return { };
+}
 
 /*
  4)
  */
+double measureTemperature(double sensorVoltage = 2.5)
+{
+    ignoreUnused(sensorVoltage);
+    return { };
+}
 
 /*
  5)
  */
+void sendEmail(char recipientInitial = 'J', int messageSize = 256)
+{
+    ignoreUnused(recipientInitial, messageSize);
+}
 
 /*
  6)
  */
+float mixAudioTracks(float drumLevel = 0.8f, float bassLevel = 0.7f, float guitarLevel = 0.6f)
+{
+    ignoreUnused(drumLevel, bassLevel, guitarLevel);
+    return { };
+}
 
 /*
  7)
  */
+int generateInvoice(int customerId = 1001, int productQuantity = 1, float taxRate = 0.15f)
+{
+    ignoreUnused(customerId, productQuantity, taxRate);
+    return { };
+}
 
 /*
  8)
  */
+bool detectCollision(float playerPositionX = 0.0f, float enemyPositionX = 10.0f)
+{
+    ignoreUnused(playerPositionX, enemyPositionX);
+    return { };
+}
 
 /*
  9)
  */
-
+void scheduleTask(int delayMilliseconds = 1000, bool repeatTask = false)
+{
+    ignoreUnused(delayMilliseconds, repeatTask);
+}
 /*
  10)
  */
+double convertCurrency(double exchangeRate = 5.25, int amountToConvert = 100)
+{
+    ignoreUnused(exchangeRate, amountToConvert);
+    return { };
+}
 
 /*
  MAKE SURE YOU ARE NOT ON THE MASTER BRANCH
@@ -141,27 +214,27 @@ int main()
     auto carRented = rentACar(6, 2); 
     
     //1)
-    
+    playSong(3, 0.8f);
     //2)
-    
+    auto score = calculateScore(15, 200);
     //3)
-    
+    auto connected = connectToServer('B', 60);
     //4)
-    
+    auto temperature = measureTemperature(3.7);
     //5)
-    
+    sendEmail('A', 512);
     //6)
-    
+    auto mixedAudio = mixAudioTracks(0.9f, 0.7f, 0.6f);
     //7)
-    
+    auto invoice = generateInvoice(1002, 4, 0.12f);
     //8)
-    
+    auto collisionDetected = detectCollision(25.0f, 30.0f);
     //9)
-    
+    scheduleTask(5000, true);
     //10)
+    auto convertedAmount = convertCurrency(5.42, 250);
     
-    
-    ignoreUnused(carRented);
+    ignoreUnused(carRented, score, connected, temperature, mixedAudio, invoice, collisionDetected, convertedAmount);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
