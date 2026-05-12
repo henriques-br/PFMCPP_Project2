@@ -37,246 +37,15 @@ video: Chapter 2 - Part 3
     Name variables what they are.
         int numStepsSinceStart;
 
-// 1)
-void playSong(int trackNumber, float volumeLevel);
-
-// 2)
-int calculateScore(int enemiesDefeated, int bonusPoints);
-
-// 3)
-bool connectToServer(char serverRegion, int timeoutSeconds);
-
-// 4)
-double measureTemperature(double sensorVoltage);
-
-// 5)
-void sendEmail(char recipientInitial, int messageSize);
-
-// 6)
-float mixAudioTracks(float drumLevel, float bassLevel, float guitarLevel);
-
-// 7)
-int generateInvoice(int customerId, int productQuantity, float taxRate);
-
-// 8)
-bool detectCollision(float playerPositionX, float enemyPositionX);
-
-// 9)
-void scheduleTask(int delayMilliseconds, bool repeatTask);
-
-// 10)
-double convertCurrency(double exchangeRate, int amountToConvert);
-
 4) add { ignoreUnused( ); } after each declaration in place of the closing semicolon
-// 1)
-void playSong(int trackNumber, float volumeLevel)
-{
-    ignoreUnused(trackNumber, volumeLevel);
-}
-
-// 2)
-int calculateScore(int enemiesDefeated, int bonusPoints)
-{
-    ignoreUnused(enemiesDefeated, bonusPoints);
-    return 0;
-}
-
-// 3)
-bool connectToServer(char serverRegion, int timeoutSeconds)
-{
-    ignoreUnused(serverRegion, timeoutSeconds);
-    return false;
-}
-
-// 4)
-double measureTemperature(double sensorVoltage)
-{
-    ignoreUnused(sensorVoltage);
-    return 0.0;
-}
-
-// 5)
-void sendEmail(char recipientInitial, int messageSize)
-{
-    ignoreUnused(recipientInitial, messageSize);
-}
-
-// 6)
-float mixAudioTracks(float drumLevel, float bassLevel, float guitarLevel)
-{
-    ignoreUnused(drumLevel, bassLevel, guitarLevel);
-    return 0.0f;
-}
-
-// 7)
-int generateInvoice(int customerId, int productQuantity, float taxRate)
-{
-    ignoreUnused(customerId, productQuantity, taxRate);
-    return 0;
-}
-
-// 8)
-bool detectCollision(float playerPositionX, float enemyPositionX)
-{
-    ignoreUnused(playerPositionX, enemyPositionX);
-    return false;
-}
-
-// 9)
-void scheduleTask(int delayMilliseconds, bool repeatTask)
-{
-    ignoreUnused(delayMilliseconds, repeatTask);
-}
-
-// 10)
-double convertCurrency(double exchangeRate, int amountToConvert)
-{
-    ignoreUnused(exchangeRate, amountToConvert);
-    return 0.0;
-}
-
 5) pass each of your function parameters to the ignoreUnused function like you did in b)
 did it on step 4
-
 6) if your function returns something other than void, add 'return { };' at the end of it.
-// 2)
-int calculateScore(int enemiesDefeated, int bonusPoints)
-{
-    ignoreUnused(enemiesDefeated, bonusPoints);
-    return { };
-}
-
-// 3)
-bool connectToServer(char serverRegion, int timeoutSeconds)
-{
-    ignoreUnused(serverRegion, timeoutSeconds);
-    return { };
-}
-
-// 4)
-double measureTemperature(double sensorVoltage)
-{
-    ignoreUnused(sensorVoltage);
-    return { };
-}
-
-// 6)
-float mixAudioTracks(float drumLevel, float bassLevel, float guitarLevel)
-{
-    ignoreUnused(drumLevel, bassLevel, guitarLevel);
-    return { };
-}
-
-// 7)
-int generateInvoice(int customerId, int productQuantity, float taxRate)
-{
-    ignoreUnused(customerId, productQuantity, taxRate);
-    return { };
-}
-
-// 8)
-bool detectCollision(float playerPositionX, float enemyPositionX)
-{
-    ignoreUnused(playerPositionX, enemyPositionX);
-    return { };
-}
-
-// 10)
-double convertCurrency(double exchangeRate, int amountToConvert)
-{
-    ignoreUnused(exchangeRate, amountToConvert);
-    return { };
-}
-
 7) provide default values for an arbitrary number of parameters in the function parameter list.
-// 1)
-void playSong(int trackNumber = 1, float volumeLevel = 0.5f)
-{
-    ignoreUnused(trackNumber, volumeLevel);
-}
-
-// 2)
-int calculateScore(int enemiesDefeated = 0, int bonusPoints = 100)
-{
-    ignoreUnused(enemiesDefeated, bonusPoints);
-    return { };
-}
-
-// 3)
-bool connectToServer(char serverRegion = 'A', int timeoutSeconds = 30)
-{
-    ignoreUnused(serverRegion, timeoutSeconds);
-    return { };
-}
-
-// 4)
-double measureTemperature(double sensorVoltage = 2.5)
-{
-    ignoreUnused(sensorVoltage);
-    return { };
-}
-
-// 5)
-void sendEmail(char recipientInitial = 'J', int messageSize = 256)
-{
-    ignoreUnused(recipientInitial, messageSize);
-}
-
-// 6)
-float mixAudioTracks(
-    float drumLevel = 0.8f,
-    float bassLevel = 0.7f,
-    float guitarLevel = 0.6f)
-{
-    ignoreUnused(drumLevel, bassLevel, guitarLevel);
-    return { };
-}
-
-// 7)
-int generateInvoice(
-    int customerId = 1001,
-    int productQuantity = 1,
-    float taxRate = 0.15f)
-{
-    ignoreUnused(customerId, productQuantity, taxRate);
-    return { };
-}
-
-// 8)
-bool detectCollision(
-    float playerPositionX = 0.0f,
-    float enemyPositionX = 10.0f)
-{
-    ignoreUnused(playerPositionX, enemyPositionX);
-    return { };
-}
-
-// 9)
-void scheduleTask(
-    int delayMilliseconds = 1000,
-    bool repeatTask = false)
-{
-    ignoreUnused(delayMilliseconds, repeatTask);
-}
-
-// 10)
-double convertCurrency(
-    double exchangeRate = 5.25,
-    int amountToConvert = 100)
-{
-    ignoreUnused(exchangeRate, amountToConvert);
-    return { };
-}
 
 8) consult the coding style guide found in the Readme.MD and adjust the formatting of your 10 functions.  At this point, you might have something that looks like this:
     float someFunc2(bool yes, int bar=2) { ignoreUnused(yes, bar ); return { }; }
     This does not conform with the coding standard for this course (check the Readme.MD) and needs to be corrected
-
-float someFunc2(bool yes, int bar=2) 
-{ 
-    ignoreUnused(yes, bar); 
-    return { }; 
-}
 
 9) in the main function at the end: 
     for each of those functions declared, 
@@ -324,27 +93,8 @@ void variableDeclarations()
     unsigned int playerScore = 5000;
     unsigned int itemQuantity = 42;
 
-    
-    ignoreUnused(number,
-        age,
-        score,
-        lives,
-        temperature,
-        speed,
-        volume,
-        pi,
-        distance,
-        frequency,
-        grade,
-        initial,
-        symbol,
-        isRunning,
-        isVisible,
-        hasFinished,
-        fileCount,
-        playerScore,
-        itemQuantity
-    ); //passing each variable declared to the ignoreUnused() function
+    ignoreUnused(number, age, score, lives, temperature, speed, volume, pi, distance, frequency, grade, initial, symbol, isRunning, isVisible, hasFinished, fileCount, playerScore, itemQuantity); //passing each variable declared to the ignoreUnused() function
+
 }
 
 /*
@@ -404,10 +154,7 @@ void sendEmail(char recipientInitial = 'J', int messageSize = 256)
 /*
  6)
  */
-float mixAudioTracks(
-    float drumLevel = 0.8f,
-    float bassLevel = 0.7f,
-    float guitarLevel = 0.6f)
+float mixAudioTracks(float drumLevel = 0.8f, float bassLevel = 0.7f, float guitarLevel = 0.6f)
 {
     ignoreUnused(drumLevel, bassLevel, guitarLevel);
     return { };
@@ -416,10 +163,7 @@ float mixAudioTracks(
 /*
  7)
  */
-int generateInvoice(
-    int customerId = 1001,
-    int productQuantity = 1,
-    float taxRate = 0.15f)
+int generateInvoice(int customerId = 1001, int productQuantity = 1, float taxRate = 0.15f)
 {
     ignoreUnused(customerId, productQuantity, taxRate);
     return { };
@@ -428,9 +172,7 @@ int generateInvoice(
 /*
  8)
  */
-bool detectCollision(
-    float playerPositionX = 0.0f,
-    float enemyPositionX = 10.0f)
+bool detectCollision(float playerPositionX = 0.0f, float enemyPositionX = 10.0f)
 {
     ignoreUnused(playerPositionX, enemyPositionX);
     return { };
@@ -439,18 +181,14 @@ bool detectCollision(
 /*
  9)
  */
-void scheduleTask(
-    int delayMilliseconds = 1000,
-    bool repeatTask = false)
+void scheduleTask(int delayMilliseconds = 1000, bool repeatTask = false)
 {
     ignoreUnused(delayMilliseconds, repeatTask);
 }
 /*
  10)
  */
-double convertCurrency(
-    double exchangeRate = 5.25,
-    int amountToConvert = 100)
+double convertCurrency(double exchangeRate = 5.25, int amountToConvert = 100)
 {
     ignoreUnused(exchangeRate, amountToConvert);
     return { };
@@ -496,15 +234,7 @@ int main()
     //10)
     auto convertedAmount = convertCurrency(5.42, 250);
     
-    ignoreUnused(carRented,
-                score,
-                connected,
-                temperature,
-                mixedAudio,
-                invoice,
-                collisionDetected,
-                convertedAmount
-        );
+    ignoreUnused(carRented, score, connected, temperature, mixedAudio, invoice, collisionDetected, convertedAmount);
     std::cout << "good to go!" << std::endl;
     return 0;    
 }
